@@ -1,0 +1,210 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<title>Find your travel mate!</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet'/>
+<link rel="stylesheet" type="text/css" href="/css/triends_style_nav.css"> 
+</head>
+<body>
+
+    
+  <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+
+  <div id='map'>  
+    <br>
+    <br>
+      <span id="navMenu" onclick="openNav()">&#9776;           Welcome  {{users.user_fullname}}  to Triends! </span>
+
+      <div id="mySidenav" class="sidenav">
+
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a id="aboutTr"  onclick="Link('AboutYou')">About Triends</a>
+        <form><a id="SetProf" onclick="Link('SetProfile')">Setting Profile</a></form>
+        <form><a id="SetPref"  onclick="Link('SetPreference')">Setting Preference</a></form>
+        <!-- <a id="FindAct" href="#" onclick="Link('FindActivities')">Find Activities</a> -->
+        <form><a id="Alarm" onclick="Link('Alarm')">Alarm</a></form>
+        <form method="GET" action="/logout"><a id="logOut" href="/logout">Log Out</a></form>
+
+      </div>
+    
+  </div>
+
+
+  <div id="modal_aboutTr" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal_header">
+        <span class="close">&times;</span>
+        <h2>About "Trirends"</h2>
+      </div>
+      
+      <div class="modal_body">
+        <p> Hi there!
+            Welcome to Triends<br>
+            The concept of Triends is to make you have more fun on your journey by making new friends in a different place.<br>
+            There are many joyful activities for you to enjoy in local; nice people as well who matched with your preference.
+
+        </p>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="modal_setProf" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal_header">
+        <span class="close">&times;</span>
+        <h2>Set your profile</h2> 
+      </div>
+
+      <div id="yourInfo" class="modal_body "style="text-align: center;">
+        <form method="POST" action="/settingProfile">
+          <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar" class="avatar"><br>
+          <label class="file-upload"><input type='file' onchange="readURL(this)"> Upload Picture</label>
+          
+          <p>Introduce yourself</p>
+          <p id="setProf_smoking">Smoking</p>
+          <label value="Smoker"> Smoker : <input type="radio" name="user_smoker" value="Smoker" ></label>
+          
+          <label value="Non-moker">Non-smoker : <input type="radio" name="user_smoker" value="Non-Smoker"  > </label>
+    
+          <p id="setProf_kindness">Kindness</p>
+          <input type="range" min="1" max="5" name="user_kindness" value="{{users.user_kindness}}">
+    
+          <p id="setProf_talkative">Talkative</p>
+          <input type="range" min="1" max="5" name="user_talkative" value="{{users.user_talkative}}">
+          
+          <p id="setProf_outgoing">Outgoing</p>
+          <input type="range" min="1" max="5" name="user_outgoing" value="{{users.user_outgoing}}">
+          
+          <p id="setProf_humorous">Humorous</p>
+          <input type="range" min="1" max="5" name="user_humerous" value="{{users.user_humerous}}">
+          
+          <p id="setProf_active">Active</p>
+          <input type="range" min="1" max="5" name="user_active" value="{{users.user_active}}">   
+          
+          <p><input type="text" name="user_moreInfo" value="{{users.user_moreInfo}}"></p>
+          
+          <p><input id="applyProfile" type='submit' value="apply" ></p>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div id="modal_setPref" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      
+      <div class="modal_header">
+        <span class="close">&times;</span>
+        <h2>Set your preference</h2>
+      </div>
+
+      <form method="POST" action="/settingPreference">
+        <div class="modal_body" style="text-align: center;">
+          <p id="setPref_gender">Gender</p>
+          male : <input type="radio" name="user_Pref_gender" value="male" >
+          female : <input type="radio" name="user_Pref_gender" value="female">
+          both : <input type="radio" name="user_Pref_gender" value="both">
+
+          <p id="setPref_smoking">Smoking</p>
+          Smoker : <input type="radio" name="user_Pref_smoker" value="Smoker">
+          Non-smoker : <input type="radio" name="user_Pref_smoker" value="Non-smoker">
+
+          <p id="setPref_kindness">Kindness</p>
+          <input type="range" min="1" max="5" name="user_Pref_kindness" value="{{users.user_Pref_kindness}}" >
+
+          <p id="setPref_talkative">Talkative</p>
+          <input type="range" min="1" max="5" name="user_Pref_talkative" value="{{users.user_Pref_talkative}}">
+          
+          <p id="setPref_outgoing">Outgoing</p>
+          <input type="range" min="1" max="5" name="user_Pref_outgoing" value="{{users.user_Pref_outgoing}}">
+          
+          <p id="setPref_humorous">Humorous</p>
+          <input type="range" min="1" max="5" name="user_Pref_humerous" value="{{users.user_Pref_humerous}}">
+
+          <p id="setPref_active">Active</p>
+          <input type="range" min="1" max="5" name="user_Pref_active" value="{{users.user_Pref_active}}">        
+
+          <p><input id="applyProfile"type='submit' value="apply"></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal_findActv" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal_header">
+      <span class="close">&times;</span>
+      <p>Find adctivities</p>
+    </div>
+
+    <div class="modal_body">
+
+
+    </div>
+
+    </div>
+  </div>
+
+  <div id="modal_Alarm" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal_header">
+        <span class="close">&times;</span>
+        <h2>Alarm</h2>
+      </div>
+
+      <div class="modal_body" style="text-align: center;">
+        <div id="chatting-list" > 
+          <li>
+            <ul>
+              a
+            </ul>
+            <ul>
+              b
+            </ul>
+            <ul>
+              c
+            </ul>
+            <ul>
+              d
+            </ul>
+          </li>
+        </div>
+        <div id="chatting-room">
+          <form method="POST">
+
+            <input id="message" type="text" placeholder="Send a message">
+            <input id="send-message" type="button" value="Send">
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  
+
+<script type="text/javascript" src="/socket.io/socket.io.js"></script> 
+<script type="text/javascript" src="/javascripts/triends_map.js"></script>
+<script type="text/javascript" src="/javascripts/triends_main.js"></script>
+</body>
+</html>

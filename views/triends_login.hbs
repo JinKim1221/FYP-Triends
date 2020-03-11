@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="/css/triends_login.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+            crossorigin="anonymous">  
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title> {{title}} </title>
+        
+
+    </head>
+
+    <body>
+
+        <div id="container" >
+            <div id="tabs">
+
+                <div id="clear"></div>
+            </div>
+
+            <div id="cont">
+                <div id="login" class="comm" style="visibility: visible;">
+                    <h3 style="text-align: center; color: cadetblue;">Sign in</h3>
+                    <br>
+                    <form method="POST" action="/login_user" autocomplete="off">
+                        <label for="mail">Email:</label>
+                        <input name="loginEmail" id="loginEmail" type="email" placeholder="Email" required/>
+
+                        
+                        <label for="password">Password:</label>
+                        <input name="loginPw" id="loginPw" type="password" placeholder="Password" required/>
+                        <div class="text-danger">
+                            {{users.user_invalidAccountError}}
+                        </div>
+
+                        <p id="forgotPW" onclick=forTabFun() >Forget Password?</p>
+
+                        <input id="SignUpBtn"type="submit" value="Sign In" />
+                        
+                    </form>
+                    
+                    <a href="/register" style="color: cadetblue;"> Create Account </a>
+
+                </div>
+
+                <div id="forgot" style="visibility: hidden;">
+                    <h3 style="color: cadetblue;">Forgot Password</h3>
+                    <div>
+                        <input id="forgotEmail" type="email" placeholder="Email" required/>
+                        <input type="submit" onclick="forgotPassword()" value="Submit"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="/javascripts/triends_login.js"></script>
+        <script type="text/javascript" src="/javascripts/triends_socket.js"></script>
+    </body >
+</html>
+

@@ -1,0 +1,194 @@
+
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+header{
+  text-align: left;
+}
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #384047;
+}
+.tabs button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  color :black;
+  width: 50%;
+   /*color: #FFF;*/
+  border-radius: 5px;
+  border: 1px solid cadetblue;
+  border-width: 1px 1px 3px;
+}
+
+button.tabs{
+  border-radius: 5px;
+}
+
+#forgotPW{  
+  font-size: small  ;
+  color:  cadetblue;
+}
+
+
+button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: cadetblue;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid white;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+}
+
+
+#container {
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 80px;
+  border-radius: 20px;
+  
+}
+
+
+.tabs {
+  display: table-cell;
+  width: 30%;
+  background-color: cadetblue;
+  padding: 10px;
+  float: left;
+  text-align: center;
+  vertical-align: middle;
+  border: 2px solid #ffffff;
+  border-bottom: 0px;
+  position: relative;
+  font-size: 1.3em;
+  color: #ffffff;
+}
+
+.tabs:hover, button{
+  cursor: pointer;
+}
+
+#loginTab {
+  background-color: cadetblue;
+}
+#cont {
+  width: auto;
+  height: auto;
+  /* border: 2px solid cadetblue; */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 300px;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+}
+
+
+input[type="submit"] {
+  padding: 19px 39px 18px 39px;
+  color:black;
+  background-color: cadetblue;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid white;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+}
+
+.tab button.active {
+  background-color: #ccc;
+} 
+
+input[type="radio"]{
+  margin: 0 4px 8px 0;
+}
+
+
+input{
+  display: block;
+  width: 250px;
+  margin: 10px 13px;
+  padding: 10px;
+  font-size: 1.3em;
+  color: rgba(11, 177, 224, 0.82);
+  outline: 2px solid #ffffff;
+}
+
+input[type="submit"] {
+  width: 272px;
+  color: #6e6e6e;
+}
+
+#clear {
+  clear: both;
+}
+
+.comm {
+  position: absolute;
+  visibility: hidden;
+}
+
+
+/* #login {
+  visibility: visible;
+} */
+
+h3 {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 10px 15px;
+  font-size: 1.5em;
+  color: #ffffff;
+}
+
+#forgot h3 {
+  display: block;
+  margin-top: 30px;
+  text-align: center;
+}
+
+#forgot div {
+  margin-top: 30px;
+}
+p {
+  padding: 10px 15px;
+  font-size: 1.3em;
+  color: #ffffff;
+}
+/*#footer {
+  width: 300px;
+  margin: 10px auto;
+  text-align: center;
+  color: rgba(9, 118, 155, 0.91);
+
+}*/
