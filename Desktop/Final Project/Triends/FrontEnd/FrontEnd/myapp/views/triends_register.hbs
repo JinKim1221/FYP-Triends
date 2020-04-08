@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="/css/triends_login.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">  
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title> {{title}} </title>
+   
+
+    </head>
+
+    <body>
+
+        
+
+        <div class="sidenav">
+            <div class="login-main-text">
+                <h2><b>Welcome to Triends!</b><br> <small>Make your travel mate around the world</small></h2>
+                {{!-- <p>Login or register from here to access.</p> --}}
+            </div>
+        </div>
+
+      <div class="main">
+         <div class="col-md-6 col-sm-12">
+            <div class="login-form">
+               
+                <div id="register" class="comm" style="visibility: visible;">
+                    <h3 style="text-align: center; color: black;"> Register</h3>
+
+                    <form  method="POST" action="/register_user" autocomplete="off">
+                        <br>
+                        <label for="name">Full Name:</label>
+                        <input name="user_fullname" id="RegisterFullname" type="text" placeholder="Enter full name" value="{{users.user_fullname}}" required/>
+                        <div class="text-danger">
+                            {{users.user_fullnameError}}
+                        </div>
+
+                        <label for="mail">Email:</label>
+                        <input name="user_email" id="RegisterEmail" type="email" placeholder="Email"  value="{{users.user_email}}" required/>
+                        <div class="text-danger">
+                            {{users.user_emailError}}
+                        </div>
+
+                        <label for="password">Password:</label>
+                        <input name="user_password" id="RegisterPw" type="password" placeholder="Password"  required/>
+                        <div class="text-danger">
+                            {{users.user_passwordError}}
+                        </div>
+
+                        <label for="conf_password">Confirm Password:</label>
+                        <input name="user_confPw" id="RegisterConfPw" type="password" placeholder="Confirm Password"  required/>
+                        <div class="text-danger">
+                            {{users.user_confPasswordError}}
+                        </div>
+
+                        <label>Gender :</label>
+                        <input type="radio" id="male" value="male" name="user_gender"><label for="male" class="light"> male    </label>
+                        <input type="radio" id="female" value="female" name="user_gender"><label for="female" class="light"> female    </label>
+                        <div class="text-danger">
+                            {{users.user_genderError}}
+                        </div>
+                        <input type="submit" class="btn btn-black"  value="Sign Up"/> 
+                         
+                        <br>
+                        <a href="/login" style="color: grey;"> Already have account? </a>
+                        <br>
+                        <br>
+                    </form>
+                
+                </div>
+                </div></div>
+
+      
+
+         
+
+
+
+        {{!-- <div id="container" >
+
+                <div id="register" class="comm" style="visibility: visible;">
+                    
+                <h3 style="text-align: center; color: cadetblue;"> Register</h3>
+                    
+                    <form  method="POST" action="/register_user" autocomplete="off">
+                        <br>
+                        <label for="name">Full Name:</label>
+                        <input name="user_fullname" id="RegisterFullname" type="text" placeholder="Enter full name" value="{{users.user_fullname}}" required/>
+                        <div class="text-danger">
+                            {{users.user_fullnameError}}
+                        </div>
+
+                        <label for="mail">Email:</label>
+                        <input name="user_email" id="RegisterEmail" type="email" placeholder="Email"  value="{{users.user_email}}" required/>
+                        <div class="text-danger">
+                            {{users.user_emailError}}
+                        </div>
+
+                        <label for="password">Password:</label>
+                        <input name="user_password" id="RegisterPw" type="password" placeholder="Password"  required/>
+                        <div class="text-danger">
+                            {{users.user_passwordError}}
+                        </div>
+
+                        <label for="conf_password">Confirm Password:</label>
+                        <input name="user_confPw" id="RegisterConfPw" type="password" placeholder="Confirm Password"  required/>
+                        <div class="text-danger">
+                            {{users.user_confPasswordError}}
+                        </div>
+
+                        <label>Gender :</label>
+                        <input type="radio" id="male" value="male" name="user_gender"><label for="male" class="light"> male    </label>
+                        <input type="radio" id="female" value="female" name="user_gender"><label for="female" class="light"> female    </label>
+                        <div class="text-danger">
+                            {{users.user_genderError}}
+                        </div>
+                        <input type="submit" class="btn btn-lg btn-primary btn-block text-uppercase "  value="Sign Up"/> 
+                         
+                        <br>
+                        <a href="/login" style="color: cadetblue;"> Already have account? </a>
+                        <br>
+                        <br>
+                    </form>
+                </div >  --}}
+
+
+
+                <!-- <div id="forgot" class="comm">
+                <h3>Forgot Password</h3>
+                <div>
+                    <input id="forgotEmail" type="email" placeholder="Email" required/>
+                    <input type="submit" onclick="forgotPassword()" value="Submit"/>
+                </div>
+                </div> -->
+            {{!-- </div>
+        </div> --}}
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="/javascripts/triends_login.js"></script>
+        <script type="text/javascript" src="/javascripts/triends_socket.js"></script>
+        
+    </body >
+</html>

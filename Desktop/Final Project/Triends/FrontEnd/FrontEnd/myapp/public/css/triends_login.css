@@ -1,0 +1,188 @@
+
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+header{
+  text-align: left;
+}
+
+
+#forgotPW{  
+  color: grey;
+}
+
+
+button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: cadetblue;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid white;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+}
+
+
+#container {
+  position: absolute;
+  top: 10%;
+  right: 15%;  
+}
+
+
+
+
+
+#cont {
+  width: auto;
+  height: auto;
+  /* border: 2px solid cadetblue; */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 300px;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+}
+
+
+input[type="submit"] {
+  padding: 19px 39px 18px 39px;
+  /* background-color: cadetblue; */
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 300px;
+  /* border: 1px solid cadetblue;  */
+  border-width: 1px 1px 3px;
+  /* box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset; */
+  margin-bottom: 10px;
+  color: #6e6e6e;
+}
+
+
+input{
+  display: block;
+  width: 250px;
+  margin: 10px 13px;
+  padding: 10px;
+  border-radius: 7px;
+  font-size: 1.3em;
+  color: rgba(11, 177, 224, 0.82);
+  outline: 2px solid #ffffff;
+}
+
+
+h3 {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 10px 15px;
+  font-size: 1.5em;
+  color: #ffffff;
+}
+
+#forgot h3 {
+  display: block;
+  margin-top: 30px;
+  text-align: center;
+}
+
+#forgot div {
+  margin-top: 30px;
+}
+p {
+  padding: 10px 15px;
+  font-size: 1.3em;
+  color: #ffffff;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  
+}
+
+
+
+.main-head{
+  height: 150px;
+  background: #FFF;
+ 
+}
+
+.sidenav {
+  height: 100%;
+  background-color: #000;
+  /* background-image: url(./public/img/background_triends.png); */
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+
+.main {
+  padding: 0 10%;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+  .login-form{
+      margin-top: 5%;
+      margin-left:10%;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .main{
+      margin-left: 40%; 
+  }
+
+  .sidenav{
+      width: 40%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+  }
+
+  .login-form{
+      margin-top: 40%;
+  }
+
+}
+
+.login-main-text{
+  margin-top: 20%;
+  padding: 60px;
+  color: #fff;
+}
+
+.login-main-text h2{
+  font-weight: 300;
+}
+
+.btn-black{
+  background-color: black !important;
+  color: #fff;
+}
