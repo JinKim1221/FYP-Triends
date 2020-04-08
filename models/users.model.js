@@ -84,6 +84,7 @@ var userSchema = new mongoose.Schema({
     }
 });
 
+
 userSchema.path('user_email').validate((val)=>{
     emailRegex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
     return emailRegex.test(val);
