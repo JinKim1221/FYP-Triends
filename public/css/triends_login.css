@@ -8,34 +8,10 @@
 header{
   text-align: left;
 }
-body {
-  font-family: 'Nunito', sans-serif;
-  color: #384047;
-}
-.tabs button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
-  color :black;
-  width: 50%;
-   /*color: #FFF;*/
-  border-radius: 5px;
-  border: 1px solid cadetblue;
-  border-width: 1px 1px 3px;
-}
 
-button.tabs{
-  border-radius: 5px;
-}
 
 #forgotPW{  
-  font-size: small  ;
-  color:  cadetblue;
+  color: grey;
 }
 
 
@@ -56,36 +32,15 @@ button {
 
 
 #container {
-  width: 300px;
-  margin: 0 auto;
-  margin-top: 80px;
-  border-radius: 20px;
-  
+  position: absolute;
+  top: 10%;
+  right: 15%;  
 }
 
 
-.tabs {
-  display: table-cell;
-  width: 30%;
-  background-color: cadetblue;
-  padding: 10px;
-  float: left;
-  text-align: center;
-  vertical-align: middle;
-  border: 2px solid #ffffff;
-  border-bottom: 0px;
-  position: relative;
-  font-size: 1.3em;
-  color: #ffffff;
-}
 
-.tabs:hover, button{
-  cursor: pointer;
-}
 
-#loginTab {
-  background-color: cadetblue;
-}
+
 #cont {
   width: auto;
   height: auto;
@@ -112,25 +67,17 @@ input[type="password"]{
 
 input[type="submit"] {
   padding: 19px 39px 18px 39px;
-  color:black;
-  background-color: cadetblue;
+  /* background-color: cadetblue; */
   font-size: 18px;
   text-align: center;
   font-style: normal;
   border-radius: 5px;
-  width: 100%;
-  border: 1px solid white;
+  width: 300px;
+  /* border: 1px solid cadetblue;  */
   border-width: 1px 1px 3px;
-  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  /* box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset; */
   margin-bottom: 10px;
-}
-
-.tab button.active {
-  background-color: #ccc;
-} 
-
-input[type="radio"]{
-  margin: 0 4px 8px 0;
+  color: #6e6e6e;
 }
 
 
@@ -139,29 +86,12 @@ input{
   width: 250px;
   margin: 10px 13px;
   padding: 10px;
+  border-radius: 7px;
   font-size: 1.3em;
   color: rgba(11, 177, 224, 0.82);
   outline: 2px solid #ffffff;
 }
 
-input[type="submit"] {
-  width: 272px;
-  color: #6e6e6e;
-}
-
-#clear {
-  clear: both;
-}
-
-.comm {
-  position: absolute;
-  visibility: hidden;
-}
-
-
-/* #login {
-  visibility: visible;
-} */
 
 h3 {
   display: table-cell;
@@ -185,10 +115,74 @@ p {
   font-size: 1.3em;
   color: #ffffff;
 }
-/*#footer {
-  width: 300px;
-  margin: 10px auto;
-  text-align: center;
-  color: rgba(9, 118, 155, 0.91);
 
-}*/
+body {
+  font-family: "Lato", sans-serif;
+  
+}
+
+
+
+.main-head{
+  height: 150px;
+  background: #FFF;
+ 
+}
+
+.sidenav {
+  height: 100%;
+  background-color: #000;
+  /* background-image: url(./public/img/background_triends.png); */
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+
+.main {
+  padding: 0 10%;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+  .login-form{
+      margin-top: 5%;
+      margin-left:10%;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .main{
+      margin-left: 40%; 
+  }
+
+  .sidenav{
+      width: 40%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+  }
+
+  .login-form{
+      margin-top: 40%;
+  }
+
+}
+
+.login-main-text{
+  margin-top: 20%;
+  padding: 60px;
+  color: #fff;
+}
+
+.login-main-text h2{
+  font-weight: 300;
+}
+
+.btn-black{
+  background-color: black !important;
+  color: #fff;
+}
