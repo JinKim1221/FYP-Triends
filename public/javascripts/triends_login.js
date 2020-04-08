@@ -1,3 +1,4 @@
+var socket = io();
 var emailArray=[];
 var passwordArray=[];
 
@@ -9,13 +10,12 @@ var loginTab = document.getElementById("loginTab");
 var regTab = document.getElementById("registerTab");
 
 const loginBtn = document.getElementById("SignUpBtn");
-
-var script = document.location;
-var fullUrl = script.src;
+const forgotPW = document.getElementById("forgotPW");
 
 // loginBtn.addEventListener("click", function(){
 //     location.href = 'triends_main.html';
 // })
+
 
 function regTabFun(){
     event.preventDefault();
@@ -48,8 +48,9 @@ function forTabFun(){
 
     regTab.style.backgroundColor="rgb(95,158,160)";
     loginTab.style.backgroundColor="rgb(80,130,160)";
-
 }
+
+
 
 
 function register(){
@@ -100,39 +101,6 @@ function register(){
     }
 }
 
-function login(){
-    event.preventDefault();
-
-    var email = document.getElementById("loginEmail").value;
-    var password = document.getElementById("loginPw").value;
-
-    var i = emailArray.indexOf(email);
-
-    if(emailArray.indexOf(email) == -1){
-        if (email == ""){
-            alert("Email required.");
-            return ;
-        }
-        alert("Email does not exist.");
-        return ;
-    }
-    else if(passwordArray[i] != password){
-        if (password == ""){
-            alert("Password required.");
-            return ;
-        }
-        alert("Password does not match.");
-        return ;
-    }
-    else {
-        alert(email + " yor are login Now \n welcome to our website.");
-
-        document.getElementById("loginEmail").value ="";
-        document.getElementById("loginPw").value="";
-        return ;
-    }
-
-}
 function forgotPassword(){
     event.preventDefault();
 
@@ -152,3 +120,7 @@ function forgotPassword(){
     alert("email is send to your email check it in 24hr. \n Thanks");
     document.getElementById("fe").value ="";
 }
+
+var loging_welcome = document.getElementById("loging_welcome");
+var containter = document.getElementById("container");
+

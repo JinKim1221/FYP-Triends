@@ -1,10 +1,25 @@
 
+var chatListDiv = document.getElementById('chatListDiv');
+var chat = document.getElementById('chat');
+var backToList = document.getElementById('backToList');
+var singleMsg_Div = document.getElementById("singleMsg");
+
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
+
+  singleMsg_Div.style.display='none';
+  notifyBdg.style.display='none';
+  chatListDiv.style.display='block';
+  chat.style.display='none';
 }
   
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
+  
+  chatListDiv.style.display='none';  
+  backToList.style.display='none';
+  chat.style.display='none';
+  singleMsg_Div.style.display='block';
 }
 
 
