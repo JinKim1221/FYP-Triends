@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+            crossorigin="anonymous">  
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/login.css">
+        <title> {{title}} </title>
+        
+   
+    </head>
+
+    <body>
+        <div class="sidenav">
+            <div class="login-main-text">
+                <h2><b>Welcome to YouStar!</b><br> <small>Make your own blog</small></h2>
+            </div>
+        </div>
+
+      <div class="main">
+         <div class="col-md-6 col-sm-12">
+            <div class="login-form">
+               
+                <div id="register" class="comm" style="visibility: visible;">
+                    <h3 style="text-align: center; color: black;"> Register</h3>
+
+                    <form  method="POST" action="/register_user" autocomplete="off">
+                        <br>
+                        <label for="name">Full Name:</label>
+                        <input name="user_fullname" id="RegisterFullname" type="text" placeholder="Enter full name" value="{{users.user_fullname}}" required/>
+                        <div class="text-danger">
+                            {{users.user_fullnameError}}
+                        </div>
+
+                        <label for="mail">Email:</label>
+                        <input name="user_email" id="RegisterEmail" type="email" placeholder="Email"  value="{{users.user_email}}" required/>
+                        <div class="text-danger">
+                            {{users.user_emailError}}
+                        </div>
+
+                        <label for="password">Password:</label>
+                        <input name="user_password" id="RegisterPw" type="password" placeholder="Password"  required/>
+                        <div class="text-danger">
+                            {{users.user_passwordError}}
+                        </div>
+
+                        <label for="conf_password">Confirm Password:</label>
+                        <input name="user_confPw" id="RegisterConfPw" type="password" placeholder="Confirm Password"  required/>
+                        <div class="text-danger">
+                            {{users.user_confPasswordError}}
+                        </div>
+
+                        <input type="submit" class="btn btn-black"  value="Sign Up"/> 
+                         
+                        <br>
+                        <a href="/login" style="color: grey;"> Already have account? </a>
+                        <br>
+                        <br>
+                    </form>
+                
+                </div>
+                </div></div>
+
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="/javascripts/register.js"></script>
+        
+    </body >
+</html>
