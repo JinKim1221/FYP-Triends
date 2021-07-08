@@ -20,4 +20,4 @@ class Bookmark(models.Model):
 
 # Model made -> what type of data will be into database
 # migration -> model is informed in database(create table)
-# makemigration -> record of change of model
+# makemigrations -> record of change of model
